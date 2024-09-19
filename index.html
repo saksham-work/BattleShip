@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-computeratible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEA BATTLE</title>
+<link href="fonts/Residu/fonts.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="matrix" style="position: fixed; left:20px; top:50px;"></div>
+<div class="wrap">
+	<div class="battlefield">
+		<div id="text_top" class="flex text-top">Ship placement</div>
+		<div class="flex outer">
+			<!-- playing field human -->
+			<div class="field field-human">
+				<div id="field_human" class="ships"></div>
+			</div>
+			<!-- playing field computer -->
+			<div class="field field-computer" hidden>
+				<div id="field_computer" class="ships"></div>
+			</div>
+
+			<!-- instruction -->
+			<div id="instruction" class="instruction">
+				<div id="type_placement" class="type-placement-box">
+					1. <span class="link" data-target="random">Random generation</span><br>
+					2. <span class="link" data-target="manually">Your placement (only for Desktop)</span>
+				</div>
+				<div id="ships_collection" class="ships-collection" hidden>
+					<p>Drag the ships onto the playing field with the mouse. To set the ship vertically, click on it with the right mouse button.</p>
+				</div>
+			</div>
+		</div>
+		<div class="service-row">
+			<div id="service_text" class="service-text"></div>
+			<button id="play" type="button" class="btn-play" hidden>Play</button></button>
+			<button id="newgame" type="button" class="btn-play btn-newgame" hidden>Continue</button>
+		</div>
+	</div>
+	<div class="manual">
+		<p class="manual-titles">Game Rules</p>
+		<p class="manual-text">
+			Sea Battle is a two-player game, where players take turns guessing the location of their opponent's ships on a map. 
+			In this game, you will play against the computer. <br>
+
+			Each player places their ships on a 10x10 grid prior to the start of the game. 
+			The goal is to be the first player to successfully hit and sink all of your opponent's ships. 
+			The player who goes first is selected at random.<br>
+
+			When it's your turn, you will choose a coordinate on the enemy's map. 
+			If there is a ship located at the coordinate you choose, it will be marked as <span style="color:#c00">"HIT"</span>. 
+			If you sink the ship, the word <span style="color:#c00">"SANK"</span> will appear and you will have the opportunity to take another shot. 
+			If the shot misses, the word <span style="color:#c00">"MISS"</span> will appear and the turn will pass to your opponent.<br>
+
+			Each player can have a maximum of 10 ships on the map, with the following distribution: one 4-square ship, two 3-square ships, three 2-square ships, and four 1-square ships.
+			The ships can only be placed vertically or horizontally, and there must be at least one empty square between each ship.<br>
+
+			It's important to note that the computer <b>does not</b> use information about player ships to gain an advantage in the game.<br>
+		</p>
+		<p class="manual-titles">What's so special about this computer AI?</p>
+		<p class="manual-text">
+			My sea battle AI utilizes a more strategic approach compared to most other AI's that simply choose coordinates randomly. 
+			Instead, the AI calculates the point with the highest probability of having a ship by randomly placing unfound ships on free cells. 
+			The point with the most generated ships on it is then targeted by the computer's shot. 
+			This approach ensures both effectiveness and randomness, making it impossible for the user to exploit any predictable patterns. 
+			Based on my statistics, this AI has a <span style="color:#0917d6">60%</span> win rate against other random-based sea battle AI's, which is a remarkable result considering the inherent chaos of the battleship game.
+		</p>
+		<p class="manual-titles">Contacts</p>
+		<p class="contact-text">This game is made by Alex Kap.<br>
+			<a href="https://github.com/SeldonHZ" style="color:#000000">
+				<img class="contacts" src="img/github.svg" alt="" height="60px" width="60px">
+				My GitHub
+			</a>
+		</p>
+	</div>
+</div>
+
+<ul class="initial-ships" hidden>
+	<li>
+		<div id="fourdeck1" class="ship fourdeck"></div>
+		<div id="tripledeck1" class="ship tripledeck tripledeck1"></div>
+		<div id="tripledeck2" class="ship tripledeck tripledeck2"></div>
+	</li>
+	<li>
+		<div id="doubledeck1" class="ship doubledeck"></div>
+		<div id="doubledeck2" class="ship doubledeck doubledeck2"></div>
+		<div id="doubledeck3" class="ship doubledeck doubledeck3"></div>
+	</li>
+	<li>
+		<div id="singledeck1" class="ship singledeck"></div>
+		<div id="singledeck2" class="ship singledeck singledeck2"></div>
+		<div id="singledeck3" class="ship singledeck singledeck3"></div>
+		<div id="singledeck4" class="ship singledeck singledeck4"></div>
+	</li>
+</ul>
+
+<script src="js/function.js"></script>
+</body>
+</html>
