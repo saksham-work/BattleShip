@@ -1,0 +1,10 @@
+
+@font-face {
+	font-family: 'Residu';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Residu'),
+		 url('Residu.ttf')  format('truetype'),
+		 url('Residu.otf') format('opentype');
+		 
+}
